@@ -79,7 +79,9 @@ def build_index() -> list[Chunk]:
 
 
 if __name__ == "__main__":
-    chunks = build_index()
-    print(f"{len(chunks)} chunks indexados e salvos em {INDEX_PATH}")
-    print(f"Exemplo — {chunks[0].source} (pág. {chunks[0].page_number}): {chunks[0].text[:150]}")
-    print(f"Dimensão do embedding: {chunks[0].embedding.shape}")
+    print(
+        "Não rode embedder.py diretamente — isso quebra o pickle "
+        "(a classe Chunk fica registrada em __main__, não em "
+        "src.ingestion.embedder). Use:\n"
+        "    uv run python scripts/build_index.py"
+    )
