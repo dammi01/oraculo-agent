@@ -12,4 +12,20 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "sentence-transformers>=5.7.0",
     "streamlit>=1.61.1",
+    "torch==2.13.0",
 ]
+
+[tool.uv]
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'"
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+
